@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block titulo %}
+        Escuela de Paquita
+        {% endblock %}
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO INSTITUCIONAL -->
+    <header class="encabezado">
+
+        <div class="encabezado-contenido">
+
+            <a href="/" class="marca-institucional">
+
+                <img
+                    src="{{ url_for('static', filename='img/escudo-paquita.jpg') }}"
+                    alt="Escudo de la Escuela de Paquita"
+                    class="escudo">
+
+                <div class="informacion-institucional">
+
+                    <h1>Escuela de Paquita</h1>
+
+                    <p class="lema">
+                        Estudiar para servir
+                    </p>
+
+                    <p class="ubicacion">
+                        Aguirre, Puntarenas
+                    </p>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </header>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="navegacion"
+         aria-label="Navegación principal">
+
+        <div class="navegacion-contenido">
+
+            <a href="/" class="enlace-menu">
+                Inicio
+            </a>
+
+            <a href="/historia" class="enlace-menu">
+                Nuestra historia
+            </a>
+
+            <a href="/galeria" class="enlace-menu">
+                Galería
+            </a>
+
+            <a href="/inscripcion" class="enlace-menu">
+                Inscripción
+            </a>
+
+        </div>
+
+    </nav>
+
+    <!-- CONTENIDO DE CADA PÁGINA -->
+    <main>
+
+        {% block contenido %}
+        {% endblock %}
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie-pagina">
+
+        <p>
+            &copy; 2026 Escuela de Paquita.
+            Todos los derechos reservados.
+        </p>
+
+        <p>
+            Aguirre, Puntarenas, Costa Rica
+        </p>
+
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}">
+    </script>
+
+</body>
+</html>

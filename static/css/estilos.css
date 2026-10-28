@@ -1,0 +1,1120 @@
+
+:root {
+    /* Colores institucionales del escudo */
+    --color-primario: #303F91;
+    --color-secundario: #23783A;
+    --color-acento: #E6CB38;
+
+    /* Colores complementarios */
+    --color-fondo: #F3F6F5;
+    --color-texto: #263238;
+    --color-blanco: #FFFFFF;
+
+    /* Tipografía */
+    --fuente-principal: Arial, Helvetica, sans-serif;
+
+    /* Ancho máximo del contenido */
+    --ancho-maximo: 1200px;
+}
+
+/* ========================================
+   7. ENCABEZADO INSTITUCIONAL
+======================================== */
+
+.encabezado {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+}
+
+.encabezado-contenido {
+    width: min(90%, var(--ancho-maximo));
+    margin: 0 auto;
+    padding: 18px 0;
+}
+
+.marca-institucional {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    color: var(--color-blanco);
+    text-decoration: none;
+}
+
+.escudo {
+    width: 105px;
+    height: 115px;
+    object-fit: contain;
+    background-color: var(--color-blanco);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.informacion-institucional h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--color-blanco);
+}
+
+.lema {
+    margin: 5px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-acento);
+}
+
+.ubicacion {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--color-blanco);
+}
+
+/* ========================================
+   8. MENÚ DE NAVEGACIÓN
+======================================== */
+
+.navegacion {
+    background-color: var(--color-secundario);
+}
+
+.navegacion-contenido {
+    width: min(90%, var(--ancho-maximo));
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.enlace-menu {
+    display: inline-block;
+    padding: 15px 22px;
+
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: background-color 0.2s ease;
+}
+
+.enlace-menu:hover {
+    background-color: var(--color-primario);
+}
+
+.enlace-menu:focus-visible {
+    outline-offset: -4px;
+}
+
+/* ========================================
+   9. PIE DE PÁGINA
+======================================== */
+
+.pie-pagina {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 25px 15px;
+}
+
+.pie-pagina p {
+    margin: 5px 0;
+}
+
+/* ========================================
+   10. DISEÑO RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .encabezado-contenido {
+        padding: 15px 0;
+    }
+
+    .marca-institucional {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .escudo {
+        width: 95px;
+        height: 105px;
+    }
+
+    .informacion-institucional h1 {
+        font-size: 1.5rem;
+    }
+
+    .lema {
+        font-size: 1rem;
+    }
+
+    .navegacion-contenido {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0;
+    }
+
+    .enlace-menu {
+        text-align: center;
+        padding: 13px 8px;
+        font-size: 0.9rem;
+    }
+
+    main {
+        width: 92%;
+        padding: 25px 0;
+    }
+}
+
+@media (max-width: 360px) {
+
+    .navegacion-contenido {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   11. PÁGINA DE INICIO
+======================================== */
+
+/* Bienvenida */
+
+.inicio-bienvenida {
+    background: linear-gradient(
+        135deg,
+        var(--color-primario),
+        #4658AC
+    );
+
+    color: var(--color-blanco);
+    border-radius: 16px;
+    padding: 65px 45px;
+    margin-bottom: 55px;
+}
+
+.bienvenida-contenido {
+    max-width: 750px;
+}
+
+.etiqueta-institucional {
+    display: inline-block;
+    background-color: var(--color-acento);
+    color: var(--color-texto);
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.inicio-bienvenida h2 {
+    color: var(--color-blanco);
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 20px;
+}
+
+.inicio-bienvenida p {
+    font-size: 1.1rem;
+    max-width: 650px;
+    margin-bottom: 30px;
+}
+
+/* Botones */
+
+.bienvenida-botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.boton {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+.boton:hover {
+    transform: translateY(-2px);
+}
+
+.boton-primario {
+    background-color: var(--color-acento);
+    color: var(--color-texto);
+}
+
+.boton-secundario {
+    background-color: var(--color-blanco);
+    color: var(--color-primario);
+}
+
+/* Presentación */
+
+.inicio-presentacion {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 60px;
+}
+
+.inicio-presentacion h2 {
+    margin-bottom: 20px;
+}
+
+/* Servicios y tarjetas */
+
+.inicio-servicios {
+    margin-bottom: 60px;
+}
+
+.inicio-servicios > h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tarjetas-inicio {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.tarjeta {
+    background-color: var(--color-blanco);
+    padding: 30px 25px;
+    border-radius: 12px;
+    border-top: 5px solid var(--color-secundario);
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-icono {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.tarjeta h3 {
+    margin-bottom: 15px;
+}
+
+.tarjeta p {
+    flex-grow: 1;
+}
+
+.tarjeta-enlace {
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: 15px;
+    font-weight: bold;
+    color: var(--color-primario);
+}
+
+/* Lema institucional */
+
+.inicio-lema {
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 45px 25px;
+    border-radius: 12px;
+}
+
+.inicio-lema h2 {
+    color: var(--color-blanco);
+    font-size: 2rem;
+}
+
+.inicio-lema span {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--color-acento);
+    font-weight: bold;
+}
+
+/* Adaptación a tabletas */
+
+@media (max-width: 900px) {
+
+    .tarjetas-inicio {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+/* Adaptación a celulares */
+
+@media (max-width: 600px) {
+
+    .inicio-bienvenida {
+        padding: 40px 22px;
+    }
+
+    .bienvenida-botones {
+        flex-direction: column;
+    }
+
+    .boton {
+        text-align: center;
+    }
+
+    .tarjetas-inicio {
+        grid-template-columns: 1fr;
+    }
+
+    .inicio-presentacion {
+        margin-bottom: 40px;
+    }
+
+    .inicio-servicios {
+        margin-bottom: 40px;
+    }
+
+    .inicio-lema {
+        padding: 35px 20px;
+    }
+
+}
+
+/* ========================================
+   13. GALERÍA FOTOGRÁFICA
+======================================== */
+
+.galeria-encabezado {
+    background: linear-gradient(
+        135deg,
+        var(--color-primario),
+        #4658AC
+    );
+
+    text-align: center;
+    color: var(--color-blanco);
+    padding: 55px 25px;
+    border-radius: 14px;
+    margin-bottom: 40px;
+}
+
+.galeria-encabezado h2 {
+    color: var(--color-blanco);
+    font-size: clamp(2rem, 4vw, 2.7rem);
+}
+
+.galeria-encabezado p {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.galeria-etiqueta {
+    display: inline-block;
+    background-color: var(--color-acento);
+    color: var(--color-texto);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Contenedor del carrusel */
+
+.galeria-principal {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.carrusel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 14px;
+    background-color: #E6EBF4;
+}
+
+.carrusel-imagenes {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.imagen-carrusel {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.5s ease,
+        visibility 0.5s ease;
+}
+
+.imagen-carrusel.activa {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Botones de navegación */
+
+.carrusel-anterior,
+.carrusel-siguiente {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: rgba(0, 0, 0, 0.65);
+    color: var(--color-blanco);
+
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.carrusel-anterior {
+    left: 15px;
+}
+
+.carrusel-siguiente {
+    right: 15px;
+}
+
+.carrusel-anterior:hover,
+.carrusel-siguiente:hover {
+    background-color: var(--color-primario);
+}
+
+/* Indicadores */
+
+.carrusel-indicadores {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+}
+
+.indicador {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+
+    border: 2px solid var(--color-blanco);
+    border-radius: 50%;
+
+    background-color: rgba(0, 0, 0, 0.45);
+    cursor: pointer;
+}
+
+.indicador.activo {
+    background-color: var(--color-acento);
+    border-color: var(--color-acento);
+}
+
+/* Descripción */
+
+.galeria-descripcion {
+    text-align: center;
+    margin-top: 25px;
+    color: var(--color-texto);
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+
+    .galeria-encabezado {
+        padding: 40px 20px;
+    }
+
+    .carrusel-imagenes {
+        aspect-ratio: 4 / 3;
+    }
+
+    .carrusel-anterior,
+    .carrusel-siguiente {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
+
+    .carrusel-anterior {
+        left: 8px;
+    }
+
+    .carrusel-siguiente {
+        right: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .imagen-carrusel {
+        transition: none;
+    }
+}
+
+/* ========================================
+   14. FORMULARIO DE INSCRIPCIÓN
+======================================== */
+
+/* Contenedor principal */
+
+.seccion-inscripcion {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Encabezado del formulario */
+
+.seccion-inscripcion > h2 {
+    background: linear-gradient(
+        135deg,
+        var(--color-primario),
+        #4658AC
+    );
+
+    color: var(--color-blanco);
+    text-align: center;
+
+    padding: 35px 20px;
+    border-radius: 12px 12px 0 0;
+
+    margin-bottom: 0;
+}
+
+.seccion-inscripcion > p {
+    background-color: var(--color-blanco);
+    text-align: center;
+    padding: 15px 25px;
+    margin: 0;
+}
+
+.seccion-inscripcion > p:last-of-type {
+    color: var(--color-primario);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Formulario */
+
+#formulario-inscripcion {
+    background-color: var(--color-blanco);
+    padding: 35px;
+
+    border-radius: 0 0 12px 12px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Agrupación de campos */
+
+#formulario-inscripcion fieldset {
+    border: 1px solid #D8DFE5;
+    border-radius: 10px;
+
+    padding: 25px;
+    margin: 0 0 30px;
+    min-width: 0;
+}
+
+#formulario-inscripcion legend {
+    color: var(--color-primario);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+/* Etiquetas */
+
+#formulario-inscripcion label {
+    display: block;
+    margin: 15px 0 7px;
+
+    color: var(--color-texto);
+    font-weight: 600;
+}
+
+/* Campos */
+
+#formulario-inscripcion input,
+#formulario-inscripcion select,
+#formulario-inscripcion textarea {
+    display: block;
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #AEBAC5;
+    border-radius: 7px;
+
+    background-color: var(--color-blanco);
+    color: var(--color-texto);
+
+    font-size: 1rem;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Interacción */
+
+#formulario-inscripcion input:focus,
+#formulario-inscripcion select:focus,
+#formulario-inscripcion textarea:focus {
+    border-color: var(--color-primario);
+
+    outline: 2px solid var(--color-primario);
+    outline-offset: 1px;
+}
+
+/* Área de observaciones */
+
+#formulario-inscripcion textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+/* Botón de envío */
+
+#formulario-inscripcion button[type="submit"] {
+    display: block;
+    width: 100%;
+
+    padding: 15px 20px;
+
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+
+    border: none;
+    border-radius: 8px;
+
+    font-weight: bold;
+    font-size: 1rem;
+
+    cursor: pointer;
+}
+
+/* Estado deshabilitado */
+
+#formulario-inscripcion button:disabled {
+    background-color: #DCE1E6;
+    color: #59636E;
+    cursor: not-allowed;
+}
+
+/* Aviso inferior */
+
+#formulario-inscripcion > p {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #59636E;
+    margin-top: 15px;
+}
+
+/* Diseño para celulares */
+
+@media (max-width: 600px) {
+
+    .seccion-inscripcion > h2 {
+        padding: 28px 15px;
+        font-size: 1.6rem;
+    }
+
+    #formulario-inscripcion {
+        padding: 20px 15px;
+    }
+
+    #formulario-inscripcion fieldset {
+        padding: 18px 15px;
+    }
+
+    #formulario-inscripcion legend {
+        font-size: 1.05rem;
+    }
+
+}
+
+/* ==========================================
+   15. MATRÍCULA POR ETAPAS
+   ESCUELA DE PAQUITA
+========================================== */
+
+/* Contenedor principal */
+
+.seccion-inscripcion {
+    max-width: 950px;
+    margin: 0 auto 60px;
+}
+
+/* Encabezado institucional */
+
+.matricula-encabezado {
+    background: linear-gradient(
+        135deg,
+        var(--color-primario),
+        #4658AC
+    );
+
+    color: var(--color-blanco);
+    text-align: center;
+
+    padding: 50px 30px;
+    border-radius: 14px 14px 0 0;
+}
+
+.matricula-encabezado h2 {
+    color: var(--color-blanco);
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    margin-bottom: 15px;
+}
+
+.matricula-encabezado p {
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.matricula-etiqueta {
+    display: inline-block;
+
+    background-color: var(--color-acento);
+    color: var(--color-texto);
+
+    padding: 7px 18px;
+    border-radius: 25px;
+
+    font-size: 0.85rem;
+    font-weight: bold;
+
+    margin-bottom: 18px;
+}
+
+/* ==========================================
+   BARRA DE PROGRESO
+========================================== */
+
+.matricula-progreso {
+    background-color: var(--color-blanco);
+    padding: 25px 35px 15px;
+}
+
+#texto-progreso {
+    color: var(--color-primario);
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.barra-progreso {
+    width: 100%;
+    height: 10px;
+
+    background-color: #DCE3E9;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#progreso-actual {
+    width: 20%;
+    height: 100%;
+
+    background-color: var(--color-secundario);
+    border-radius: 20px;
+
+    transition: width 0.3s ease;
+}
+
+/* ==========================================
+   FORMULARIO
+========================================== */
+
+#formulario-inscripcion {
+    background-color: var(--color-blanco);
+
+    padding: 20px 35px 35px;
+
+    border-radius: 0 0 14px 14px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Etapas */
+
+#formulario-inscripcion .etapa-formulario {
+    border: 1px solid #DCE3E9;
+    border-radius: 12px;
+
+    padding: 30px;
+    margin: 0 0 25px;
+    min-width: 0;
+}
+
+/* Solo mostrar la etapa activa */
+
+#formulario-inscripcion .etapa-formulario:not(.activa) {
+    display: none;
+}
+
+/* Título de la etapa */
+
+#formulario-inscripcion .etapa-formulario legend {
+    color: var(--color-primario);
+    font-size: 1.25rem;
+    font-weight: bold;
+
+    padding: 0 12px;
+}
+
+/* Subtítulos */
+
+.etapa-formulario h3 {
+    color: var(--color-secundario);
+    font-size: 1.15rem;
+    margin: 20px 0;
+}
+
+/* Separador entre madre y padre */
+
+.etapa-formulario hr {
+    border: none;
+    border-top: 1px solid #DCE3E9;
+    margin: 35px 0;
+}
+
+/* ==========================================
+   CAMPOS DEL FORMULARIO
+========================================== */
+
+#formulario-inscripcion label {
+    display: block;
+
+    font-weight: 600;
+    color: var(--color-texto);
+
+    margin: 18px 0 8px;
+}
+
+#formulario-inscripcion input,
+#formulario-inscripcion select,
+#formulario-inscripcion textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+
+    padding: 13px 15px;
+
+    background-color: var(--color-blanco);
+    color: var(--color-texto);
+
+    border: 1px solid #AEBAC5;
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 1rem;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Campo seleccionado */
+
+#formulario-inscripcion input:focus,
+#formulario-inscripcion select:focus,
+#formulario-inscripcion textarea:focus {
+    border-color: var(--color-primario);
+
+    outline: 2px solid var(--color-primario);
+    outline-offset: 1px;
+}
+
+/* Textareas */
+
+#formulario-inscripcion textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+/* Campos incorrectos */
+
+#formulario-inscripcion input:focus:invalid,
+#formulario-inscripcion select:focus:invalid {
+    border-color: #B42318;
+}
+
+/* ==========================================
+   BOTONES DE NAVEGACIÓN
+========================================== */
+
+.matricula-botones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    flex-wrap: wrap;
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+.matricula-botones button {
+    padding: 13px 25px;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+/* Botón anterior */
+
+#boton-anterior {
+    background-color: #E5E7EB;
+    color: var(--color-texto);
+}
+
+#boton-anterior:hover:not(:disabled) {
+    background-color: #D1D5DB;
+}
+
+/* Botón siguiente */
+
+#boton-siguiente {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+}
+
+#boton-siguiente:hover:not(:disabled) {
+    background-color: #202C70;
+}
+
+/* Botón enviar */
+
+#formulario-inscripcion #boton-enviar {
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+}
+
+/* Botones deshabilitados */
+
+#formulario-inscripcion .matricula-botones button:disabled {
+    background-color: #DCE1E6;
+    color: #59636E;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Aviso informativo */
+
+#formulario-inscripcion .matricula-aviso {
+    margin-top: 25px;
+    padding: 15px;
+
+    background-color: #F3F6F5;
+
+    border-left: 4px solid var(--color-acento);
+    border-radius: 6px;
+
+    color: var(--color-texto);
+    font-size: 0.9rem;
+    line-height: 1.6;
+
+    text-align: left;
+}
+
+/* ==========================================
+   DISEÑO RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .matricula-encabezado {
+        padding: 40px 20px;
+    }
+
+    .matricula-progreso {
+        padding: 20px 20px 10px;
+    }
+
+    #formulario-inscripcion {
+        padding: 20px;
+    }
+
+    #formulario-inscripcion .etapa-formulario {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .matricula-encabezado {
+        padding: 30px 15px;
+    }
+
+    #formulario-inscripcion {
+        padding: 15px;
+    }
+
+    #formulario-inscripcion .etapa-formulario {
+        padding: 18px 12px;
+    }
+
+    #formulario-inscripcion .etapa-formulario legend {
+        font-size: 1.05rem;
+    }
+
+    .matricula-botones {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .matricula-botones button {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    #progreso-actual,
+    .matricula-botones button {
+        transition: none;
+    }
+}
+
+/* ==========================================
+   16. VISIBILIDAD DEL FORMULARIO
+========================================== */
+
+#formulario-inscripcion [hidden] {
+    display: none !important;
+}
+
+.campo-condicional {
+    margin-top: 10px;
+}
+
+#formulario-inscripcion .etapa-formulario {
+    scroll-margin-top: 25px;
+}

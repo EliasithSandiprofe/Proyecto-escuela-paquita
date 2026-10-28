@@ -1,0 +1,151 @@
+
+{% extends "base.html" %}
+
+{% block titulo %}
+Inicio | Escuela de Paquita
+{% endblock %}
+
+{% block contenido %}
+
+<!-- SECCIÓN DE BIENVENIDA -->
+<section class="inicio-bienvenida">
+
+    <div class="bienvenida-contenido">
+
+        <span class="etiqueta-institucional">
+            Comunidad educativa
+        </span>
+
+        <h2>
+            Bienvenidos a la
+            Escuela de Paquita
+        </h2>
+
+        <p>
+            Un espacio dedicado a la educación,
+            los valores y el desarrollo integral
+            de nuestra comunidad estudiantil.
+        </p>
+
+        <div class="bienvenida-botones">
+
+            <a href="/historia" class="boton boton-primario">
+                Conoce nuestra historia
+            </a>
+
+            <a href="/inscripcion" class="boton boton-secundario">
+                Información de inscripción
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRESENTACIÓN INSTITUCIONAL -->
+<section class="inicio-presentacion">
+
+    <h2>Conoce nuestra institución</h2>
+
+    <p>
+        La Escuela de Paquita forma parte de la
+        comunidad educativa de Aguirre, Puntarenas.
+    </p>
+
+    <p>
+        A través de este sitio web podrás conocer
+        nuestra trayectoria, explorar fotografías
+        de la institución y acceder a información
+        relacionada con el proceso de inscripción.
+    </p>
+
+</section>
+
+
+<!-- ACCESOS RÁPIDOS -->
+<section class="inicio-servicios">
+
+    <h2>Explora nuestro sitio</h2>
+
+    <div class="tarjetas-inicio">
+
+        <article class="tarjeta">
+
+            <div class="tarjeta-icono" aria-hidden="true">
+                &#127979;
+            </div>
+
+            <h3>Nuestra historia</h3>
+
+            <p>
+                Descubre los orígenes y la
+                trayectoria de nuestra institución.
+            </p>
+
+            <a href="/historia" class="tarjeta-enlace">
+                Conocer más
+            </a>
+
+        </article>
+
+
+        <article class="tarjeta">
+
+            <div class="tarjeta-icono" aria-hidden="true">
+                &#128247;
+            </div>
+
+            <h3>Galería fotográfica</h3>
+
+            <p>
+                Explora imágenes de nuestras
+                instalaciones y actividades.
+            </p>
+
+            <a href="/galeria" class="tarjeta-enlace">
+                Ver galería
+            </a>
+
+        </article>
+
+
+        <article class="tarjeta">
+
+            <div class="tarjeta-icono" aria-hidden="true">
+                &#128221;
+            </div>
+
+            <h3>Inscripción</h3>
+
+            <p>
+                Consulta la información disponible
+                sobre las solicitudes de inscripción.
+            </p>
+
+            <a href="/inscripcion" class="tarjeta-enlace">
+                Más información
+            </a>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- MENSAJE INSTITUCIONAL -->
+<section class="inicio-lema">
+
+    <h2>Estudiar para servir</h2>
+
+    <p>
+        Lema institucional de la Escuela de Paquita.
+    </p>
+
+    <span>Desde 1961</span>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,145 @@
+
+{% extends "base.html" %}
+
+{% block titulo %}
+Nuestra historia | Escuela de Paquita
+{% endblock %}
+
+{% block contenido %}
+
+<!-- ENCABEZADO DE LA PÁGINA -->
+<section class="historia-encabezado">
+
+    <span class="historia-etiqueta">
+        Identidad institucional
+    </span>
+
+    <h2>Nuestra historia</h2>
+
+    <p>
+        Conoce la trayectoria, los valores y la
+        identidad de la Escuela de Paquita.
+    </p>
+
+</section>
+
+
+<!-- RESEÑA HISTÓRICA -->
+<section class="historia-resena">
+
+    <div class="historia-resena-contenido">
+
+        <h2>Reseña histórica</h2>
+
+        <p>
+            La Escuela de Paquita forma parte de
+            la comunidad de Aguirre, Puntarenas.
+        </p>
+
+        <p>
+            En este espacio incorporaremos la reseña
+            histórica oficial de nuestra institución:
+            sus orígenes, acontecimientos importantes,
+            crecimiento y contribuciones a la comunidad.
+        </p>
+
+        <p class="historia-nota">
+            Contenido histórico pendiente de incorporar.
+        </p>
+
+    </div>
+
+    <div class="historia-imagen-placeholder">
+
+        <span aria-hidden="true">&#127979;</span>
+
+        <p>
+            Fotografía histórica de la institución
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- MISIÓN Y VISIÓN -->
+<section class="historia-identidad">
+
+    <h2>Nuestra identidad institucional</h2>
+
+    <div class="historia-tarjetas">
+
+        <article class="historia-tarjeta">
+
+            <div class="historia-icono" aria-hidden="true">
+                &#127919;
+            </div>
+
+            <h3>Misión</h3>
+
+            <p>
+                Aquí incorporaremos la misión oficial
+                de la Escuela de Paquita.
+            </p>
+
+        </article>
+
+        <article class="historia-tarjeta">
+
+            <div class="historia-icono" aria-hidden="true">
+                &#127775;
+            </div>
+
+            <h3>Visión</h3>
+
+            <p>
+                Aquí incorporaremos la visión oficial
+                de la Escuela de Paquita.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ESCUDO INSTITUCIONAL -->
+<section class="historia-escudo">
+
+    <div class="historia-escudo-imagen">
+
+        <img
+            src="{{ url_for('static', filename='img/escudo-paquita.jpg') }}"
+            alt="Escudo oficial de la Escuela de Paquita"
+            loading="lazy">
+
+    </div>
+
+    <div class="historia-escudo-contenido">
+
+        <h2>Nuestro escudo</h2>
+
+        <p>
+            El escudo representa la identidad
+            de nuestra institución educativa.
+        </p>
+
+        <p>
+            Su lema institucional es:
+        </p>
+
+        <blockquote>
+            Estudiar para servir
+        </blockquote>
+
+        <p>
+            Próximamente incorporaremos la explicación
+            oficial del significado de sus símbolos.
+        </p>
+
+    </div>
+
+</section>
+
+{% endblock %}

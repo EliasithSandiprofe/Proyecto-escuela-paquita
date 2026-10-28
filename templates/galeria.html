@@ -1,0 +1,97 @@
+
+{% extends "base.html" %}
+
+{% block titulo %}
+Galería | Escuela de Paquita
+{% endblock %}
+
+{% block contenido %}
+
+<section class="galeria-encabezado">
+
+    <span class="galeria-etiqueta">
+        Nuestra comunidad educativa
+    </span>
+
+    <h2>Galería fotográfica</h2>
+
+    <p>
+        Un recorrido visual por nuestras instalaciones,
+        actividades y momentos especiales.
+    </p>
+
+</section>
+
+
+<section class="galeria-principal">
+
+    <div class="carrusel"
+         aria-label="Galería fotográfica de la escuela">
+
+        <div class="carrusel-imagenes">
+
+            <img
+                src="{{ url_for('static', filename='img/escuela1.jpg') }}"
+                alt="Fotografía de la Escuela de Paquita"
+                class="imagen-carrusel activa">
+
+            <img
+                src="{{ url_for('static', filename='img/escuela2.jpg') }}"
+                alt="Instalaciones de la institución"
+                class="imagen-carrusel">
+
+            <img
+                src="{{ url_for('static', filename='img/escuela3.jpg') }}"
+                alt="Actividades de la comunidad educativa"
+                class="imagen-carrusel">
+
+        </div>
+
+        <button
+            type="button"
+            class="carrusel-anterior"
+            aria-label="Fotografía anterior">
+            &#10094;
+        </button>
+
+        <button
+            type="button"
+            class="carrusel-siguiente"
+            aria-label="Fotografía siguiente">
+            &#10095;
+        </button>
+
+        <div class="carrusel-indicadores"
+             aria-label="Seleccionar fotografía">
+
+            <button
+                type="button"
+                class="indicador activo"
+                aria-label="Ver fotografía 1"
+                aria-current="true">
+            </button>
+
+            <button
+                type="button"
+                class="indicador"
+                aria-label="Ver fotografía 2">
+            </button>
+
+            <button
+                type="button"
+                class="indicador"
+                aria-label="Ver fotografía 3">
+            </button>
+
+        </div>
+
+    </div>
+
+    <p class="galeria-descripcion">
+        Conoce algunos de los momentos que forman
+        parte de nuestra comunidad educativa.
+    </p>
+
+</section>
+
+{% endblock %}

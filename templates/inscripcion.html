@@ -1,0 +1,596 @@
+
+{% extends "base.html" %}
+
+{% block titulo %}
+Boleta de matrícula | Escuela de Paquita
+{% endblock %}
+
+{% block contenido %}
+
+<section class="seccion-inscripcion">
+
+    <header class="matricula-encabezado">
+        <span class="matricula-etiqueta">
+            Escuela de Paquita
+        </span>
+
+        <h2>Boleta de matrícula</h2>
+
+        <p>
+            Complete la información solicitada
+            para el proceso de matrícula estudiantil.
+        </p>
+    </header>
+
+    <div class="matricula-progreso">
+        <p id="texto-progreso">
+            Etapa 1 de 5
+        </p>
+
+        <div class="barra-progreso">
+            <div id="progreso-actual"></div>
+        </div>
+    </div>
+
+    <!--
+        El envío permanecerá deshabilitado
+        hasta implementar las medidas de seguridad
+        y el procesamiento en Flask.
+    -->
+
+    <form id="formulario-inscripcion"
+          method="post"
+          autocomplete="on">
+
+        <!-- =============================
+             ETAPA 1: ESTUDIANTE
+        ============================== -->
+
+        <fieldset class="etapa-formulario activa"
+                  data-etapa="1">
+
+            <legend>1. Datos del estudiante</legend>
+
+            <label for="nivel_solicitado">
+                Nivel solicitado *
+            </label>
+
+            <select id="nivel_solicitado"
+                    name="nivel_solicitado"
+                    required>
+
+                <option value="">
+                    Seleccione un nivel
+                </option>
+
+                <option value="MATERNO">Materno</option>
+                <option value="TRANSICION">Transición</option>
+                <option value="PRIMERO">Primer año</option>
+                <option value="SEGUNDO">Segundo año</option>
+                <option value="TERCERO">Tercer año</option>
+                <option value="CUARTO">Cuarto año</option>
+                <option value="QUINTO">Quinto año</option>
+                <option value="SEXTO">Sexto año</option>
+            </select>
+
+            <label for="nombre_estudiante">
+                Nombre completo del estudiante *
+            </label>
+
+            <input type="text"
+                   id="nombre_estudiante"
+                   name="nombre_estudiante"
+                   maxlength="150"
+                   autocomplete="name"
+                   required>
+
+            <label for="sexo">
+                Sexo
+            </label>
+
+            <select id="sexo" name="sexo">
+                <option value="">Seleccione</option>
+                <option value="FEMENINO">Femenino</option>
+                <option value="MASCULINO">Masculino</option>
+            </select>
+
+            <label for="fecha_nacimiento">
+                Fecha de nacimiento
+            </label>
+
+            <input type="date"
+                   id="fecha_nacimiento"
+                   name="fecha_nacimiento">
+
+            <label for="numero_identificacion">
+                Número de identificación
+            </label>
+
+            <input type="text"
+                   id="numero_identificacion"
+                   name="numero_identificacion"
+                   maxlength="30">
+
+            <label for="nacionalidad">
+                Nacionalidad
+            </label>
+
+            <input type="text"
+                   id="nacionalidad"
+                   name="nacionalidad"
+                   maxlength="80">
+
+            <label for="edad_referencia">
+                Edad
+            </label>
+
+            <input type="number"
+                   id="edad_referencia"
+                   name="edad_referencia"
+                   min="0"
+                   max="25">
+
+            <label for="vive_con">
+                ¿Con quién vive el estudiante?
+            </label>
+
+            <select id="vive_con" name="vive_con">
+                <option value="">Seleccione</option>
+                <option value="MADRE">Madre</option>
+                <option value="PADRE">Padre</option>
+                <option value="AMBOS">Ambos padres</option>
+                <option value="OTRO">Otro encargado</option>
+            </select>
+
+            <label for="direccion_exacta">
+                Dirección de residencia
+            </label>
+
+            <textarea id="direccion_exacta"
+                      name="direccion_exacta"
+                      rows="3"></textarea>
+
+        </fieldset>
+
+
+        <!-- =============================
+             ETAPA 2: SALUD
+        ============================== -->
+
+        <fieldset class="etapa-formulario"
+                  data-etapa="2">
+
+            <legend>2. Salud y necesidades educativas</legend>
+
+            <label for="tiene_enfermedad">
+                ¿Presenta alguna enfermedad?
+            </label>
+
+            <select id="tiene_enfermedad"
+                    name="tiene_enfermedad">
+                <option value="">Seleccione</option>
+                <option value="SI">Sí</option>
+                <option value="NO">No</option>
+            </select>
+
+            <label for="detalle_enfermedad">
+                Especifique la enfermedad
+            </label>
+
+            <textarea id="detalle_enfermedad"
+                      name="detalle_enfermedad"
+                      rows="2"></textarea>
+
+            <label for="toma_medicamentos">
+                ¿Toma medicamentos?
+            </label>
+
+            <select id="toma_medicamentos"
+                    name="toma_medicamentos">
+                <option value="">Seleccione</option>
+                <option value="SI">Sí</option>
+                <option value="NO">No</option>
+            </select>
+
+            <label for="detalle_medicamentos">
+                Indique los medicamentos
+            </label>
+
+            <textarea id="detalle_medicamentos"
+                      name="detalle_medicamentos"
+                      rows="2"></textarea>
+
+            <label for="vacunacion_al_dia">
+                ¿Tiene las vacunas al día?
+            </label>
+
+            <select id="vacunacion_al_dia"
+                    name="vacunacion_al_dia">
+                <option value="">Seleccione</option>
+                <option value="SI">Sí</option>
+                <option value="NO">No</option>
+            </select>
+
+            <label for="peso_kg">
+                Peso aproximado (kg)
+            </label>
+
+            <input type="number"
+                   id="peso_kg"
+                   name="peso_kg"
+                   min="0"
+                   max="300"
+                   step="0.01">
+
+            <label for="dificultades">
+                Dificultades o necesidades educativas
+            </label>
+
+            <textarea id="dificultades"
+                      name="dificultades"
+                      rows="3"></textarea>
+
+            <label for="tiene_adecuacion_curricular">
+                ¿Cuenta con adecuación curricular?
+            </label>
+
+            <select id="tiene_adecuacion_curricular"
+                    name="tiene_adecuacion_curricular">
+                <option value="">Seleccione</option>
+                <option value="SI">Sí</option>
+                <option value="NO">No</option>
+            </select>
+
+            <label for="detalle_adecuacion">
+                Detalle de la adecuación
+            </label>
+
+            <textarea id="detalle_adecuacion"
+                      name="detalle_adecuacion"
+                      rows="2"></textarea>
+
+            <label for="recibe_educacion_religiosa">
+                ¿Recibirá educación religiosa?
+            </label>
+
+            <select id="recibe_educacion_religiosa"
+                    name="recibe_educacion_religiosa">
+                <option value="">Seleccione</option>
+                <option value="SI">Sí</option>
+                <option value="NO">No</option>
+            </select>
+
+        </fieldset>
+
+
+        <!-- =============================
+             ETAPA 3: RESPONSABLES
+        ============================== -->
+
+        <fieldset class="etapa-formulario"
+                  data-etapa="3">
+
+            <legend>3. Datos de los responsables</legend>
+
+            <h3>Información de la madre</h3>
+
+            <label for="madre_nombre">
+                Nombre completo
+            </label>
+            <input type="text"
+                   id="madre_nombre"
+                   name="madre_nombre"
+                   maxlength="150">
+
+            <label for="madre_identificacion">
+                Identificación
+            </label>
+            <input type="text"
+                   id="madre_identificacion"
+                   name="madre_identificacion"
+                   maxlength="30">
+
+            <label for="madre_estado_civil">
+                Estado civil
+            </label>
+            <input type="text"
+                   id="madre_estado_civil"
+                   name="madre_estado_civil">
+
+            <label for="madre_nacionalidad">
+                Nacionalidad
+            </label>
+            <input type="text"
+                   id="madre_nacionalidad"
+                   name="madre_nacionalidad">
+
+            <label for="madre_profesion">
+                Profesión u oficio
+            </label>
+            <input type="text"
+                   id="madre_profesion"
+                   name="madre_profesion">
+
+            <label for="madre_telefono">
+                Teléfono
+            </label>
+            <input type="tel"
+                   id="madre_telefono"
+                   name="madre_telefono">
+
+            <label for="madre_trabajo">
+                Lugar de trabajo
+            </label>
+            <input type="text"
+                   id="madre_trabajo"
+                   name="madre_trabajo">
+
+            <label for="madre_correo">
+                Correo electrónico
+            </label>
+            <input type="email"
+                   id="madre_correo"
+                   name="madre_correo">
+
+            <label for="madre_nivel_academico">
+                Nivel académico
+            </label>
+            <input type="text"
+                   id="madre_nivel_academico"
+                   name="madre_nivel_academico">
+
+            <hr>
+
+            <h3>Información del padre</h3>
+
+            <label for="padre_nombre">
+                Nombre completo
+            </label>
+            <input type="text"
+                   id="padre_nombre"
+                   name="padre_nombre"
+                   maxlength="150">
+
+            <label for="padre_identificacion">
+                Identificación
+            </label>
+            <input type="text"
+                   id="padre_identificacion"
+                   name="padre_identificacion"
+                   maxlength="30">
+
+            <label for="padre_estado_civil">
+                Estado civil
+            </label>
+            <input type="text"
+                   id="padre_estado_civil"
+                   name="padre_estado_civil">
+
+            <label for="padre_nacionalidad">
+                Nacionalidad
+            </label>
+            <input type="text"
+                   id="padre_nacionalidad"
+                   name="padre_nacionalidad">
+
+            <label for="padre_profesion">
+                Profesión u oficio
+            </label>
+            <input type="text"
+                   id="padre_profesion"
+                   name="padre_profesion">
+
+            <label for="padre_telefono">
+                Teléfono
+            </label>
+            <input type="tel"
+                   id="padre_telefono"
+                   name="padre_telefono">
+
+            <label for="padre_trabajo">
+                Lugar de trabajo
+            </label>
+            <input type="text"
+                   id="padre_trabajo"
+                   name="padre_trabajo">
+
+            <label for="padre_correo">
+                Correo electrónico
+            </label>
+            <input type="email"
+                   id="padre_correo"
+                   name="padre_correo">
+
+            <label for="padre_nivel_academico">
+                Nivel académico
+            </label>
+            <input type="text"
+                   id="padre_nivel_academico"
+                   name="padre_nivel_academico">
+
+        </fieldset>
+
+
+        <!-- =============================
+             ETAPA 4: INFORMACIÓN FAMILIAR
+        ============================== -->
+
+        <fieldset class="etapa-formulario"
+                  data-etapa="4">
+
+            <legend>4. Información familiar</legend>
+
+            <label for="tiene_hermanos_centro">
+                ¿Tiene hermanos matriculados
+                en la institución?
+            </label>
+
+            <select id="tiene_hermanos_centro"
+                    name="tiene_hermanos_centro">
+                <option value="">Seleccione</option>
+                <option value="SI">Sí</option>
+                <option value="NO">No</option>
+            </select>
+
+            <label for="cantidad_hermanos">
+                Cantidad de hermanos
+            </label>
+
+            <input type="number"
+                   id="cantidad_hermanos"
+                   name="cantidad_hermanos"
+                   min="0"
+                   max="20">
+
+            <label for="detalle_hermanos">
+                Información de los hermanos
+            </label>
+
+            <textarea id="detalle_hermanos"
+                      name="detalle_hermanos"
+                      rows="2"></textarea>
+
+            <label for="tiene_beca">
+                ¿Recibe alguna beca?
+            </label>
+
+            <select id="tiene_beca"
+                    name="tiene_beca">
+                <option value="">Seleccione</option>
+                <option value="SI">Sí</option>
+                <option value="NO">No</option>
+            </select>
+
+            <label for="detalle_beca">
+                Especifique la beca
+            </label>
+
+            <textarea id="detalle_beca"
+                      name="detalle_beca"
+                      rows="2"></textarea>
+
+            <h3>Contacto de emergencia</h3>
+
+            <label for="emergencia_nombre">
+                Nombre completo
+            </label>
+
+            <input type="text"
+                   id="emergencia_nombre"
+                   name="emergencia_nombre">
+
+            <label for="emergencia_parentesco">
+                Parentesco
+            </label>
+
+            <input type="text"
+                   id="emergencia_parentesco"
+                   name="emergencia_parentesco">
+
+            <label for="emergencia_telefono">
+                Teléfono
+            </label>
+
+            <input type="tel"
+                   id="emergencia_telefono"
+                   name="emergencia_telefono">
+
+        </fieldset>
+
+
+        <!-- =============================
+             ETAPA 5: SITUACIÓN DEL HOGAR
+        ============================== -->
+
+        <fieldset class="etapa-formulario"
+                  data-etapa="5">
+
+            <legend>5. Vivienda y situación económica</legend>
+
+            <label for="tipo_vivienda">
+                Tipo de vivienda
+            </label>
+
+            <input type="text"
+                   id="tipo_vivienda"
+                   name="tipo_vivienda">
+
+            <label for="condicion_vivienda">
+                Condición de la vivienda
+            </label>
+
+            <input type="text"
+                   id="condicion_vivienda"
+                   name="condicion_vivienda">
+
+            <label for="monto_alquiler">
+                Monto mensual del alquiler (₡)
+            </label>
+
+            <input type="number"
+                   id="monto_alquiler"
+                   name="monto_alquiler"
+                   min="0"
+                   step="0.01">
+
+            <label for="ingreso_mensual">
+                Ingreso mensual del hogar (₡)
+            </label>
+
+            <input type="number"
+                   id="ingreso_mensual"
+                   name="ingreso_mensual"
+                   min="0"
+                   step="0.01">
+
+            <label for="tiene_internet">
+                ¿Cuenta con acceso a internet?
+            </label>
+
+            <select id="tiene_internet"
+                    name="tiene_internet">
+                <option value="">Seleccione</option>
+                <option value="SI">Sí</option>
+                <option value="NO">No</option>
+            </select>
+
+        </fieldset>
+
+
+        <!-- =============================
+             CONTROLES DE NAVEGACIÓN
+        ============================== -->
+
+        <div class="matricula-botones">
+
+            <button type="button"
+                    id="boton-anterior">
+                Anterior
+            </button>
+
+            <button type="button"
+                    id="boton-siguiente">
+                Siguiente
+            </button>
+
+            <button type="submit"
+                    id="boton-enviar"
+                    disabled>
+                Enviar matrícula
+                (próximamente)
+            </button>
+
+        </div>
+
+        <p class="matricula-aviso">
+            El envío de solicitudes todavía
+            no está habilitado.
+            La información ingresada no será
+            almacenada en esta etapa.
+        </p>
+
+    </form>
+
+</section>
+
+{% endblock %}
